@@ -1,6 +1,6 @@
-Yudi Putra Sabri
-2106706123
-PBP - F
+* Yudi Putra Sabri
+* 2106706123
+* PBP - F
 
 
 ## Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget dan jelaskan perbedaan dari keduanya.
