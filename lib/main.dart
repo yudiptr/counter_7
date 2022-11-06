@@ -60,6 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
+
   void _turun() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -70,7 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
       if (_counter > 0) _counter--;
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -84,13 +84,13 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             _counter % 2 == 0
                 ? const Text(
-              'GENAP',
-              style: TextStyle(color: Colors.red),
-            )
+                    'GENAP',
+                    style: TextStyle(color: Colors.red),
+                  )
                 : const Text(
-              'GANJIL',
-              style: TextStyle(color: Colors.blue),
-            ),
+                    'GANJIL',
+                    style: TextStyle(color: Colors.blue),
+                  ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
@@ -98,17 +98,17 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton:  Padding(
+      floatingActionButton: Padding(
         padding: const EdgeInsets.all(0),
-        child : Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            FloatingActionButton(
-              onPressed: _turun,
-              tooltip: 'Decrement',
-              child: const Icon(Icons.remove),
-            ),
-            SizedBox(width: 100),
+            if (_counter > 0)
+              FloatingActionButton(
+                onPressed: _turun,
+                tooltip: 'Decrement',
+                child: const Icon(Icons.remove),
+              ),
             FloatingActionButton(
               onPressed: _incrementCounter,
               tooltip: 'Increment',
