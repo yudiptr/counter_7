@@ -20,6 +20,9 @@ Setstate akan memberikan informasi ke system ketika sebuah variable berubah dan 
 
 Variabel yang terdampak tentu _counter itu sendiri karena yang mengalami perubahan adalah counter. Dari counter, akan berdampak ke text yang sudah dibuat yaitu ganjil atau genap.
 
+## Const dan final
+Const dan final sama sama variable yang bersifat immutable. Bedanya, const disetup sebelum runtime. Akan tetapi, final di set setelah runtime dan hanya untuk sekali. Dengan kata lain nilai final akan diketahui pada saat run-time.
+
 ## Implementasi
 1. `flutter create counter_7`
 2. Membuat fungsi _turun() untuk decrement counter
