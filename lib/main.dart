@@ -75,49 +75,51 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Counter Tugas PBP"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            _counter % 2 == 0
-                ? const Text(
-                    'GENAP',
-                    style: TextStyle(color: Colors.red),
-                  )
-                : const Text(
-                    'GANJIL',
-                    style: TextStyle(color: Colors.blue),
-                  ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        appBar: AppBar(
+          title: Text("Counter Tugas PBP"),
         ),
-      ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.all(0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (_counter > 0)
-              FloatingActionButton(
-                onPressed: _turun,
-                tooltip: 'Decrement',
-                child: const Icon(Icons.remove),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              _counter % 2 == 0
+                  ? const Text(
+                      'GENAP',
+                      style: TextStyle(color: Colors.red),
+                    )
+                  : const Text(
+                      'GANJIL',
+                      style: TextStyle(color: Colors.blue),
+                    ),
+              Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.headline4,
               ),
-            FloatingActionButton(
-              onPressed: _incrementCounter,
-              tooltip: 'Increment',
-              child: const Icon(Icons.add),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-      // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        floatingActionButton: Visibility(
+            child: Container(
+                width: 361,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Visibility(
+                      visible: (_counter != 0),
+                      child: FloatingActionButton(
+                        onPressed: _turun,
+                        tooltip: 'Decrement',
+                        child: const Icon(Icons.remove),
+                      ),
+                    ),
+                    FloatingActionButton(
+                      onPressed: _incrementCounter,
+                      tooltip: 'Increment',
+                      child: const Icon(Icons.add),
+                    ),
+                  ],
+                )))
+        // This trailing comma makes auto-formatting nicer for build methods.
+        );
   }
 }
