@@ -28,7 +28,7 @@ class _MyFormPageState extends State<MyFormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Form'),
+          title: Text('Form Budget'),
         ),
         drawer: const myDrawer(),
         body: Form(
