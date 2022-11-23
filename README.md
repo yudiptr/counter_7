@@ -64,3 +64,40 @@ Navigator layaknya stack untuk ditampilkan dengan paling atas berarti yang muncu
 2. Membuat file addBudget.dart untuk membuat form untuk dimasukkan kedalam List di dataBudget.
 3. File dataBudget akan diset untuk memiliki fungsi untuk menambahkan obj paada atribut classnya untuk menampung data yang diinput.
 4. Membuat showBudget dan melakukan loop dari dataBudget.len untuk diloop dan ditampilan sebagaimananya dengan Card view. Menggunakan ListView.Builder
+
+
+
+# TUGAS 9
+## Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+Kita bisa mengambil data JSON tanpa membuat model, akan tetapi, terdapat kekurangan seperti kita tidak bisa mengakses data tersebut sebagai sebuah "class" dan ini menjadi kurang efisien.
+
+## Widget yang digunakan
+* Flexible -> agar text tidak overflow
+* CheckBox -> State untuk menggantu status watched_movie
+* FutureBuilder -> Create widget saat tangkap data
+* SizedBox -> Kotak untuk positioning
+* Text -> buat text
+* TextStyle -> Styling text
+* ListView -> List widget
+* MaterialPageRoute -> change screen
+* Container -> Menampung widget
+* BoxDecoration -> Styling container
+* Column -> Container berbasis kolom
+* ElevatedButton -> Buat button di bawah
+
+## Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
+* add dependancy http
+* (Optional) Membuat model dari data yang akan di GET
+* Membuat HTTP Request untuk GET
+* GET yang didapat diubah menjadi model yang sudah dibuat sebelumnya 
+* FutureBuilder -> Membuat widget / component yang menggunakan data yang diGET setelah data sukses diGET
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+1. Menambahkan dependancy http
+2. Membuat model watchlist
+3. Membuat page watchList
+4. Menambahkan watchlist ke drawer
+5. Membuat file untuk fetchData dari url
+6. Melakukan fetch dengan futureBuilder di watchlist Page
+7. Data yang diambil akan diloop dengan item builder dan membentuk komponen seperti card
+8. Membuat navigator push yang akan menampilkan detail dari film yang diGET ketika card dipencet
