@@ -48,11 +48,10 @@ class _WatchListPageState extends State<WatchListPage> {
                       itemCount: snapshot.data!.length,
                       itemBuilder: (_, index) => ListTile(
                           trailing: Checkbox(
-                            value: snapshot.data![index].watched_movie,
+                            value: statusMovie[index],
                             onChanged: (bool? newValue) {
                               setState(() {
-                                snapshot.data![index].watched_movie =
-                                    !snapshot.data![index].watched_movie;
+                                statusMovie[index] = !statusMovie[index];
                               });
                             },
                           ),
@@ -68,13 +67,23 @@ class _WatchListPageState extends State<WatchListPage> {
                               margin: const EdgeInsets.symmetric(
                                   horizontal: 16, vertical: 12),
                               padding: const EdgeInsets.all(20.0),
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(15.0),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Colors.black, blurRadius: 2.0)
-                                  ]),
+                              decoration: statusMovie[index]
+                                  ? BoxDecoration(
+                                      color: Colors.green,
+                                      borderRadius: BorderRadius.circular(15.0),
+                                      boxShadow: const [
+                                          BoxShadow(
+                                              color: Colors.black,
+                                              blurRadius: 2.0)
+                                        ])
+                                  : BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(15.0),
+                                      boxShadow: const [
+                                          BoxShadow(
+                                              color: Colors.black,
+                                              blurRadius: 2.0)
+                                        ]),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,

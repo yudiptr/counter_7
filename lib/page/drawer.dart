@@ -47,7 +47,7 @@ class myDrawer extends StatelessWidget {
             title: const Text('WishList'),
             onTap: () {
               // Route menu ke halaman utama
-              Navigator.pushReplacement(
+              Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const WatchListPage()),
               );

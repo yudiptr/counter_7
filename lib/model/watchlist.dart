@@ -24,6 +24,10 @@ class WatchList {
   bool watched_movie;
   String movie_review;
 
+  void changeStatus() {
+    this.watched_movie = !this.watched_movie;
+  }
+
   factory WatchList.fromJson(Map<String, dynamic> json) => WatchList(
         movie_name: json["fields"]["movie_name"],
         movie_date: json["fields"]["movie_date"],
